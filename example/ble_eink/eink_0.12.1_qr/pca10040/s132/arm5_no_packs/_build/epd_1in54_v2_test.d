@@ -1,0 +1,9 @@
+.\_build\epd_1in54_v2_test.o: ..\..\..\Examples\EPD_1in54_V2_test.c
+.\_build\epd_1in54_v2_test.o: ..\..\..\Examples\EPD_Test.h
+.\_build\epd_1in54_v2_test.o: ..\..\..\Examples\..\GUI\GUI_Paint.h
+.\_build\epd_1in54_v2_test.o: ..\..\..\Examples\..\GUI\../Fonts/fonts.h
+.\_build\epd_1in54_v2_test.o: F:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\_build\epd_1in54_v2_test.o: ..\..\..\Examples\imagedata.h
+.\_build\epd_1in54_v2_test.o: ..\..\..\config\Debug.h
+.\_build\epd_1in54_v2_test.o: F:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+.\_build\epd_1in54_v2_test.o: ..\..\..\Examples\..\e-Paper\EPD_1in54_V2.h
