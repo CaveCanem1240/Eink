@@ -1,0 +1,113 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.23.0.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information:  ,  , LIC=FYKNN-YHUQX-2LVCT-RMI3S-XSR4S-ZJYYJ
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.23
+Toolchain Path:  F:\keil\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 4 (build 422)
+Assembler:       Armasm.exe V5.06 update 4 (build 422)
+Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
+Library Manager: ArmAr.exe V5.06 update 4 (build 422)
+Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
+CPU DLL:         
+Dialog DLL:      
+Target DLL:      Segger\JL2CM3.dll V2.99.23.0
+Dialog DLL:      TCM.DLL V1.27.0.0
+ 
+<h2>Project:</h2>
+C:\Users\Cave Canem\Desktop\Eink\nRF5_SDK_16.0.0_98a08e2 -2\examples\ble_eink\eink_2.0.1_modselect\pca10040\s132\arm5_no_packs\ble_app_uart_pca10040_s132.uvprojx
+Project File Date:  07/25/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'F:\keil\ARM\ARMCC\Bin'
+Build target 'nrf52832_xxaa'
+compiling main.c...
+..\..\..\main.c(707): warning:  #940-D: missing return statement at end of non-void function "update_image_record_in_flash" 
+  }
+..\..\..\main.c(873): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+  										QRImage = &QRImage_data[0];
+..\..\..\main.c(1153): warning:  #177-D: variable "err_code"  was declared but never referenced
+      ret_code_t err_code;
+..\..\..\main.c(1266): warning:  #177-D: variable "err_code"  was declared but never referenced
+  		uint32_t err_code;
+..\..\..\main.c(1943): warning:  #177-D: variable "err_code"  was declared but never referenced
+  		ret_code_t err_code;
+..\..\..\main.c(240): warning:  #177-D: variable "adv_started"  was declared but never referenced
+  static bool adv_started = 0;
+..\..\..\main.c(241): warning:  #550-D: variable "refresh_adc_reach_threshold"  was set but never used
+  static bool refresh_adc_reach_threshold = 0;
+..\..\..\main.c(243): warning:  #177-D: variable "finished_flag"  was declared but never referenced
+  static bool finished_flag = 0;
+..\..\..\main.c(244): warning:  #177-D: variable "Energy_flag"  was declared but never referenced
+  static bool Energy_flag = 0;
+..\..\..\main.c(255): warning:  #177-D: variable "sysoff_flag"  was declared but never referenced
+  static bool sysoff_flag = 1;
+..\..\..\main.c(258): warning:  #550-D: variable "ble_adc_reach_threshold"  was set but never used
+  static bool ble_adc_reach_threshold = 0;
+..\..\..\main.c(287): warning:  #550-D: variable "rx_data_fds_ready"  was set but never used
+  static bool rx_data_fds_ready = 0;
+..\..\..\main.c(299): warning:  #550-D: variable "base_map"  was set but never used
+  static unsigned char base_map[screen_size];
+..\..\..\main.c(313): warning:  #550-D: variable "eink_busy_N"  was set but never used
+  static bool eink_busy_N = 0;
+..\..\..\main.c(576): warning:  #177-D: function "gen_basemap"  was declared but never referenced
+  static void gen_basemap(const unsigned char * datas)
+..\..\..\main.c(585): warning:  #177-D: function "update_basemap_ramvalue"  was declared but never referenced
+  static void update_basemap_ramvalue(unsigned int x_start,unsigned int y_start,const unsigned char * datas,unsigned int PART_COLUMN,unsigned int PART_LINE)
+..\..\..\main.c(715): warning:  #177-D: function "check_rx_data"  was declared but never referenced
+  static bool check_rx_data(void)
+..\..\..\main.c(1119): warning:  #177-D: function "Paint_Gen_Qrcode"  was declared but never referenced
+  static void Paint_Gen_Qrcode(DOT_PIXEL qr_pixel_size)
+..\..\..\main.c(1168): warning:  #177-D: function "buttons_init"  was declared but never referenced
+  static void buttons_init(void)
+..\..\..\main.c(1783): warning:  #177-D: function "advertising_start"  was declared but never referenced
+  static void advertising_start(void)
+..\..\..\main.c(1872): warning:  #177-D: function "image_update_1in02"  was declared but never referenced
+  static void image_update_1in02(void)
+..\..\..\main.c(1917): warning:  #177-D: function "image_display_1in02"  was declared but never referenced
+  static void image_display_1in02(bool display_mode)
+..\..\..\main.c: 22 warnings, 0 errors
+linking...
+Program Size: Code=37008 RO-data=19220 RW-data=480 ZI-data=38616  
+FromELF: creating hex file...
+".\_build\nrf52832_xxaa.axf" - 0 Error(s), 22 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM::CMSIS:CORE:4.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 4.3.0
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack_NordicLicense.8.27.0.pack
+                NordicSemiconductor::Device:Startup:8.27.0
+                Nordic Semiconductor nRF ARM devices Device Family Pack with Nordic license.
+   * Component: Startup Version: 8.27.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_nrf52832_xxaa
+  F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include
+  F:\keil\NordicSemiconductor\nRF_DeviceFamilyPack\8.34.1\Device\Include
+  F:\keil\NordicSemiconductor\nRF_DeviceFamilyPack_NordicLicense\8.27.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:4.3.0
+
+   * Component: NordicSemiconductor::Device:Startup:8.27.0
+      Source file:   Device\Source\system_nrf52.c
+      Include file:  Device\Include\system_nrf.h
+      Source file:   Device\Source\arm\arm_startup_nrf52.s
+      Include file:  Device\Include\system_nrf52.h
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>
