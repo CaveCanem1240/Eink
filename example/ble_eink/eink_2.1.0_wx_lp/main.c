@@ -97,7 +97,7 @@
 
 #define APP_BLE_OBSERVER_PRIO           3                                           /**< Application's BLE observer priority. You shouldn't need to modify this value. */
 
-#define APP_ADV_INTERVAL                1600                                          /**< The advertising interval (in units of 0.625 ms. This value corresponds to 40 ms). */
+#define APP_ADV_INTERVAL                800                                          /**< The advertising interval (in units of 0.625 ms. This value corresponds to 40 ms). */
 
 #define APP_ADV_DURATION                18000                                       /**< The advertising duration (180 seconds) in units of 10 milliseconds. */
 
@@ -682,7 +682,7 @@ static int update_image_record_in_flash(const unsigned char * datas, bool mode)
 				Paint_SelectImage(PART_DISPLAY_Image);
 				Paint_Clear(WHITE);
 		}
-		nrf_gpio_pin_set(5);//3.1
+		//3.1
 		#if key_LOG
 				printf("\npart_display_data: %x", part_display_data);
 		#endif
@@ -1044,6 +1044,7 @@ static void fds_evt_handler(fds_evt_t const * p_fds_evt)
 								part_display_data_processing = 0;
 								err_code = fds_gc();
 								APP_ERROR_CHECK(err_code);
+								
 							}
 							if(record_updating_1==1){
 								record_updating_1= 0;

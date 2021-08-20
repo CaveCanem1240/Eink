@@ -371,6 +371,7 @@ void EPD_Dis_Part(unsigned int x_start,unsigned int y_start,const unsigned char 
 			datas++;
    } 
 	 EPD_Part_Update();
+	 nrf_gpio_pin_set(5);
 
 }
 

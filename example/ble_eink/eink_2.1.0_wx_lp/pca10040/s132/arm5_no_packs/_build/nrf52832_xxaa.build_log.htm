@@ -22,12 +22,71 @@ Dialog DLL:      TCM.DLL V1.27.0.0
  
 <h2>Project:</h2>
 C:\Users\Cave Canem\Desktop\Eink\ViPSN-Eink_SDK_16.0.0\examples\ble_eink\eink_2.1.0_wx_lp\pca10040\s132\arm5_no_packs\ble_app_uart_pca10040_s132.uvprojx
-Project File Date:  08/18/2021
+Project File Date:  08/19/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'F:\keil\ARM\ARMCC\Bin'
 Build target 'nrf52832_xxaa'
-".\_build\nrf52832_xxaa.axf" - 0 Error(s), 0 Warning(s).
+compiling main.c...
+..\..\..\main.c(745): warning:  #940-D: missing return statement at end of non-void function "update_image_record_in_flash" 
+  }
+..\..\..\main.c(811): warning:  #177-D: variable "err_code"  was declared but never referenced
+  		ret_code_t err_code;
+..\..\..\main.c(1005): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "uint8_t *"
+  										QRImage = &QRImage_data[0];
+..\..\..\main.c(1260): warning:  #177-D: variable "err_code"  was declared but never referenced
+      ret_code_t err_code;
+..\..\..\main.c(1373): warning:  #177-D: variable "err_code"  was declared but never referenced
+  		uint32_t err_code;
+..\..\..\main.c(227): warning:  #550-D: variable "epd_timer_start"  was set but never used
+  static bool epd_timer_start = 0;
+..\..\..\main.c(245): warning:  #177-D: variable "adv_started"  was declared but never referenced
+  static bool adv_started = 0;
+..\..\..\main.c(246): warning:  #550-D: variable "refresh_adc_reach_threshold"  was set but never used
+  static bool refresh_adc_reach_threshold = 0;
+..\..\..\main.c(248): warning:  #177-D: variable "finished_flag"  was declared but never referenced
+  static bool finished_flag = 0;
+..\..\..\main.c(249): warning:  #177-D: variable "Energy_flag"  was declared but never referenced
+  static bool Energy_flag = 0;
+..\..\..\main.c(260): warning:  #177-D: variable "sysoff_flag"  was declared but never referenced
+  static bool sysoff_flag = 1;
+..\..\..\main.c(288): warning:  #550-D: variable "fds_gc_finished"  was set but never used
+  static bool fds_gc_finished = 0;
+..\..\..\main.c(295): warning:  #550-D: variable "rx_data_fds_ready"  was set but never used
+  static bool rx_data_fds_ready = 0;
+..\..\..\main.c(304): warning:  #177-D: variable "record_updated_1"  was declared but never referenced
+  static bool record_updated_1 = 0;
+..\..\..\main.c(312): warning:  #550-D: variable "base_map"  was set but never used
+  static unsigned char base_map[screen_size];
+..\..\..\main.c(318): warning:  #550-D: variable "max_pic_num"  was set but never used
+  static uint8_t max_pic_num;
+..\..\..\main.c(326): warning:  #550-D: variable "eink_busy_N"  was set but never used
+  static bool eink_busy_N = 0;
+..\..\..\main.c(596): warning:  #177-D: function "gen_basemap"  was declared but never referenced
+  static void gen_basemap(const unsigned char * datas)
+..\..\..\main.c(605): warning:  #177-D: function "update_basemap_ramvalue"  was declared but never referenced
+  static void update_basemap_ramvalue(unsigned int x_start,unsigned int y_start,const unsigned char * datas,unsigned int PART_COLUMN,unsigned int PART_LINE)
+..\..\..\main.c(633): warning:  #177-D: function "update_part_display_ramvalue_1in02"  was declared but never referenced
+  static void update_part_display_ramvalue_1in02(unsigned int x_start,unsigned int y_start,const unsigned char * datas,unsigned int PART_COLUMN,unsigned int PART_LINE)
+..\..\..\main.c(846): warning:  #177-D: function "check_rx_data"  was declared but never referenced
+  static bool check_rx_data(void)
+..\..\..\main.c(1275): warning:  #177-D: function "buttons_init"  was declared but never referenced
+  static void buttons_init(void)
+..\..\..\main.c(1793): warning:  #177-D: function "uart_init"  was declared but never referenced
+  static void uart_init(void)
+..\..\..\main.c(1870): warning:  #177-D: function "log_init"  was declared but never referenced
+  static void log_init(void)
+..\..\..\main.c(1897): warning:  #177-D: function "updata_flash_image_1in02"  was declared but never referenced
+  static bool updata_flash_image_1in02(uint32_t pic_num)
+..\..\..\main.c(1925): warning:  #177-D: function "updata_flash_image_1in54"  was declared but never referenced
+  static bool updata_flash_image_1in54(uint32_t pic_num)
+..\..\..\main.c(1989): warning:  #177-D: function "image_update_1in02"  was declared but never referenced
+  static void image_update_1in02(void)
+..\..\..\main.c: 27 warnings, 0 errors
+linking...
+Program Size: Code=36336 RO-data=4584 RW-data=456 ZI-data=45200  
+FromELF: creating hex file...
+".\_build\nrf52832_xxaa.axf" - 0 Error(s), 27 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -54,11 +113,11 @@ Package Vendor: NordicSemiconductor
    * Component: ARM::CMSIS:CORE:4.3.0
 
    * Component: NordicSemiconductor::Device:Startup:8.27.0
-      Include file:  Device\Include\system_nrf52.h
       Source file:   Device\Source\arm\arm_startup_nrf52.s
       Source file:   Device\Source\system_nrf52.c
+      Include file:  Device\Include\system_nrf52.h
       Include file:  Device\Include\system_nrf.h
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>
