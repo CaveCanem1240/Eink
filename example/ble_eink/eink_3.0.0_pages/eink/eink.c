@@ -100,7 +100,20 @@ void SPI_EP_Init(void)
 }
 
 void SPI_EP_unInit(void)
-{
+{	
+//		nrfx_spim_uninit(&spi);
+//		*(volatile uint32_t *)0x40003FFC = 0;
+//		*(volatile uint32_t *)0x40003FFC;
+//		*(volatile uint32_t *)0x40003FFC = 1;
+//	  nrf_gpio_cfg_output(EINK_BUSY);
+
+		
+		//nrfx_spim_uninit(&spi);
+		//SPI_EP_Init();
+		//SPI_EP_Init();
+	  //nrf_gpio_cfg_default(EINK_CS);
+	  //nrf_gpio_cfg_default(EINK_DC);
+	  //nrf_gpio_cfg_default(EINK_RESET);
 		SPI_EP_Init();
 }
 
@@ -299,22 +312,31 @@ void EPD_SetRAMValue( const unsigned char * datas)
 {
 	unsigned int i;   
 	const unsigned char  *datas_flag;   
+	datas+=25;
 	datas_flag=datas;
 
 	
 	Epaper_Write_Command(0x24);   //Write Black and White image to RAM
-	for(i=0;i<ALLSCREEN_GRAGHBYTES;i++)
+	for(i=0;i<ALLSCREEN_GRAGHBYTES-25;i++)
 	{               
 		Epaper_Write_Data(*datas);
 		datas++;
 	}
+	for(i=0;i<25;i++)
+	{               
+		Epaper_Write_Data(0xFF);
+	}
 	
 	datas=datas_flag;
 	Epaper_Write_Command(0x26);   //Write Black and White image to RAM
-	for(i=0;i<ALLSCREEN_GRAGHBYTES;i++)
+	for(i=0;i<ALLSCREEN_GRAGHBYTES-25;i++)
 	{               
 		Epaper_Write_Data(*datas);
 		datas++;
+	}
+	for(i=0;i<25;i++)
+	{               
+		Epaper_Write_Data(0xFF);
 	}
 	//EPD_Update();		 
 	 
