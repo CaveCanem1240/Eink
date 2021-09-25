@@ -15,6 +15,8 @@
 
 #define MENU_DATA_ADDR 0x138A
 
+#define SOKUBAN_DATA_ADDR 0x138E
+
 
 //SPI驱动程序实例ID,ID和外设编号对应，0:SPI0  1:SPI1 2:SPI2
 #define SPI_INSTANCE2  2
@@ -280,6 +282,35 @@ void load_menu_data_from_fram(uint8_t * menu_data)
 		SPI2_Read_bytes(PIC_Addr, p_PIC, 4);
 }
 
+void store_menu_data_to_fram(uint8_t * menu_data)
+{
+		uint8_t * p_PIC;
+		p_PIC = menu_data;
+		uint16_t PIC_Addr = MENU_DATA_ADDR;
+		SPI2_Write_enable();
+		SPI2_Write_bytes(PIC_Addr, p_PIC, 4);
+}
+
+void load_sokuban_data_from_fram(uint8_t * sokuban_data)
+{
+		uint8_t * p_PIC;
+		p_PIC = sokuban_data;
+		uint16_t PIC_Addr = SOKUBAN_DATA_ADDR;
+		SPI2_Read_bytes(PIC_Addr, p_PIC, 81);
+}
+
+void store_sokuban_data_to_fram(uint8_t * sokuban_data)
+{
+		uint8_t * p_PIC;
+		p_PIC = sokuban_data;
+		uint16_t PIC_Addr = SOKUBAN_DATA_ADDR;
+		SPI2_Write_enable();
+		SPI2_Write_bytes(PIC_Addr, p_PIC, 81);
+}
+
+
+
+
 /*
 				SPI2_EP_Init();
 				UWORD Imagesize = screen_size;
@@ -310,7 +341,6 @@ void load_menu_data_from_fram(uint8_t * menu_data)
 				SPI2_EP_unInit();
 				
 */
-
 
 
 

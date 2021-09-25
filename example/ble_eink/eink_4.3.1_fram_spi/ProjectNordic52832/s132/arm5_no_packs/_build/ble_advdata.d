@@ -1,8 +1,8 @@
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\ble\common\ble_advdata.c
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\ble\common\ble_advdata.h
-.\_build\ble_advdata.o: F:\keil\ARM\ARMCC\Bin\..\include\stdint.h
-.\_build\ble_advdata.o: F:\keil\ARM\ARMCC\Bin\..\include\stdbool.h
-.\_build\ble_advdata.o: F:\keil\ARM\ARMCC\Bin\..\include\string.h
+.\_build\ble_advdata.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\_build\ble_advdata.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\_build\ble_advdata.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\string.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\softdevice\s132\headers\ble.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\softdevice\s132\headers\nrf_svc.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\softdevice\s132\headers\nrf_error.h
@@ -16,11 +16,11 @@
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\softdevice\s132\headers\ble_gattc.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\modules\nrfx\mdk\nrf.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\modules\nrfx\mdk\nrf52.h
-.\_build\ble_advdata.o: F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
-.\_build\ble_advdata.o: F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h
-.\_build\ble_advdata.o: F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h
-.\_build\ble_advdata.o: F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h
-.\_build\ble_advdata.o: F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h
+.\_build\ble_advdata.o: C:\keil5_MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
+.\_build\ble_advdata.o: C:\keil5_MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h
+.\_build\ble_advdata.o: C:\keil5_MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h
+.\_build\ble_advdata.o: C:\keil5_MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h
+.\_build\ble_advdata.o: C:\keil5_MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\modules\nrfx\mdk\system_nrf52.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\modules\nrfx\mdk\system_nrf.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\modules\nrfx\mdk\nrf52_bitfields.h
@@ -34,7 +34,7 @@
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\libraries\util\sdk_os.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\libraries\util\sdk_errors.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\libraries\util\app_util.h
-.\_build\ble_advdata.o: F:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+.\_build\ble_advdata.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\stddef.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\softdevice\s132\headers\nrf52\nrf_mbr.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\libraries\util\sdk_macros.h
 .\_build\ble_advdata.o: ..\..\..\..\..\..\components\libraries\util\nrf_assert.h

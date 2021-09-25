@@ -182,6 +182,9 @@ int i,flag1,flag2;
 #define key_ADC_LOG 0
 #define key_TEMP 0
 
+#define key_INIT_FRAM 0
+
+
 #define key_BLE 0
 #define key_wxBLE 0
 #define key_1in54 1
@@ -228,6 +231,8 @@ static bool Init_Ready = 0;
 static bool Init_waiting = 0;
 static int Init_Process = 0;
 
+static uint8_t game_num;
+static uint8_t chapter_num;
 
 /***********************************************************************************************************
 	* SAADC DEFINITIONS
@@ -317,9 +322,11 @@ static unsigned char part_display_data[screen_size];
 static unsigned char part_data[screen_size];
 static uint8_t game_data[9][9];
 static uint8_t menu_data[4];
+static uint8_t sokuban_data[9][9];
 
 static int display_mode;
 static uint8_t max_pic_num;
+static uint8_t max_chapter_num;
 
 volatile static uint32_t ble_data_length;
 UBYTE *QRImage;
@@ -598,37 +605,12 @@ static void update_part_display_ramvalue(unsigned int x_start,unsigned int y_sta
 		} 
 }
 
-static void update_image_record_in_flash(const unsigned char * datas, int mode)
+static void update_image_record_in_fram(const unsigned char * datas, int mode)
 {
 		
 		ret_code_t err_code;
-		fds_flash_record_t  part_display_flash_record = {0};
-		fds_record_desc_t   part_display_record_desc = {0};
-		fds_find_token_t    part_display_ftok = {0};
-		
-		memset(&part_display_ftok, 0x00, sizeof(fds_find_token_t));
-		
-		if(fds_record_find(FILE_ID_PART_DISPLAY, RECORD_KEY_PART_DISPLAY, &part_display_record_desc, &part_display_ftok) == NRF_SUCCESS){
-				err_code = fds_record_open(&part_display_record_desc, &part_display_flash_record);
-				APP_ERROR_CHECK(err_code);
-				uint8_t * part_display_Addr = (uint8_t*)(part_display_flash_record.p_data);
-				for(uint32_t i = 0; i < screen_size; i++){
-						part_display_data[i] = part_display_Addr[i];
-				}
-				err_code = fds_record_close(&part_display_record_desc);
-				APP_ERROR_CHECK(err_code);
-		}
-		else{
-				UWORD Imagesize = screen_size;
-				for(uint32_t i = 0; i < Imagesize; i++){
-						part_display_data[i] = 0xFF;
-				}
-				Paint_NewImage(PART_DISPLAY_Image, screen_size_x, screen_size_y, 270, WHITE);
-				
-				Paint_SelectImage(PART_DISPLAY_Image);
-				Paint_Clear(WHITE);
-		}
-		//3.1
+
+		Find_Display_IMG(PART_DISPLAY_Image);
 		
 		if(mode!=2){
 			EPD_SetRAMValue(PART_DISPLAY_Image);								//
@@ -637,8 +619,8 @@ static void update_image_record_in_flash(const unsigned char * datas, int mode)
 		//3.2
 		uint8_t x_start,y_start;
 		if(mode == 1){
-				x_start = (m_pic_num_part / (screen_size_x/partial_area_x)) * partial_area_x;
-				y_start = screen_size_y-(m_pic_num_part % (screen_size_y/partial_area_y)) * partial_area_y;
+				x_start = (chapter_num / (screen_size_x/partial_area_x)) * partial_area_x;
+				y_start = screen_size_y-(chapter_num % (screen_size_y/partial_area_y)) * partial_area_y;
 				update_part_display_ramvalue(x_start, y_start, datas, partial_area_x, partial_area_y);     //
 		}
 		else{
@@ -647,38 +629,9 @@ static void update_image_record_in_flash(const unsigned char * datas, int mode)
 						part_data[i] = datas[i];
 				}
 		}
-		//nrf_gpio_pin_set(7);
 		//3.3
+		Update_Display_IMG(PART_DISPLAY_Image);
 		
-
-		
-		memset(&part_display_ftok, 0x00, sizeof(fds_find_token_t));
-		part_display_data_processing = 1;
-		if(fds_record_find(FILE_ID_PART_DISPLAY, RECORD_KEY_PART_DISPLAY, &part_display_record_desc, &part_display_ftok) == NRF_SUCCESS){
-				fds_record_t new_part_display_record = {0};
-				new_part_display_record.file_id           = FILE_ID_PART_DISPLAY;
-				new_part_display_record.key               = RECORD_KEY_PART_DISPLAY;
-
-				new_part_display_record.data.p_data = PART_DISPLAY_Image;
-				new_part_display_record.data.length_words = screen_size/4;
-
-				err_code = fds_record_update(&part_display_record_desc, &new_part_display_record);
-				APP_ERROR_CHECK(err_code);
-		}
-		else{
-				fds_record_t        init_part_display_record = {0};
-				fds_record_desc_t   init_part_display_record_desc = {0};
-						
-				// Set up record.
-				init_part_display_record.file_id           = FILE_ID_PART_DISPLAY;
-				init_part_display_record.key               = RECORD_KEY_PART_DISPLAY;
-				init_part_display_record.data.p_data       = PART_DISPLAY_Image;
-				init_part_display_record.data.length_words = screen_size/4;
-						
-				err_code = fds_record_write(&init_part_display_record_desc, &init_part_display_record);
-				APP_ERROR_CHECK(err_code);
-		}
-		//nrf_gpio_pin_set(5);
 }
 
 
@@ -1747,11 +1700,12 @@ static int updata_flash_image_1in54(uint32_t game_num, bool update)
 		int mode;		//mode: 0 - full screen update without refresh
 								//      1 - 40*40 pixel partial update without refresh
 								//      2 - full screen update with refresh
+		FRAM_SPI2_Init();
 		switch (game_num){
 			case 0:		//clear screen
 				mode = 2;
 				if(update==1){
-					update_image_record_in_flash(gImage_white_full,mode);
+					update_image_record_in_fram(gImage_white_full,mode);
 				}
 				break;
 			case 1:		//Menu
@@ -1789,10 +1743,25 @@ static int updata_flash_image_1in54(uint32_t game_num, bool update)
 					nrf_gpio_cfg_default(15);
 					nrf_gpio_cfg_default(16);
 					
-					load_menu_data_from_fram(next_menu);
-					GEN_NEXT_MENU_PIC(operation, 0, 0);
 					
-					if(load_menu_data_from_fram()==1){
+					load_menu_data_from_fram(next_menu);
+					
+					bool init_menu = 1;
+					for(uint8_t i=0;i<4;i++){
+						if(next_menu[i]!=0){
+							init_menu = 0;
+						}
+					}
+					for(uint8_t i=0;i<4;i++){
+						if(next_menu[i]>8){
+							init_menu = 1;
+						}
+					}
+					
+					GEN_NEXT_MENU_PIC(operation, init_menu, 0);
+					
+					/*
+					if(load_menu_data()==1){
 							GEN_NEXT_MENU_PIC(operation, 0, 0);
 							//next menu
 					}
@@ -1800,11 +1769,15 @@ static int updata_flash_image_1in54(uint32_t game_num, bool update)
 							GEN_NEXT_MENU_PIC(0, 1, 0);
 							//initialize menu data
 					}
-					/*menu rule end*/
+					*/
+					/*menu rule end
 					
-					store_menu_data();
+					store_menu_data();*/
+					
+					store_menu_data_to_fram(next_menu);
+					
 						
-					update_image_record_in_flash(Map_Image,mode);
+					update_image_record_in_fram(Map_Image,mode);
 				}
 				break;
 			case 2:		//game Sokoban
@@ -1839,6 +1812,41 @@ static int updata_flash_image_1in54(uint32_t game_num, bool update)
 					if(nrf_gpio_pin_read(16)==1){
 							operation=4;
 					}
+					
+					load_sokuban_data_from_fram(sokuban_data[0]);
+					
+					bool init_game = 1;
+					for(uint8_t i=0;i<9;i++){
+						for(uint8_t j=0;j<9;j++){
+							if(sokuban_data[i][j]!=0){
+								init_game = 0;
+							}
+						}
+					}
+					for(uint8_t i=0;i<9;i++){
+						for(uint8_t j=0;j<9;j++){
+							if(sokuban_data[i][j]>6){
+								init_game = 1;
+							}
+						}
+					}
+					
+					uint8_t box_num = GEN_NEXT_PIC(operation, init_game, 0);
+					uint8_t max_chapter = 3;
+					if(box_num==0){
+							chapter_num++;
+							if(chapter_num >= max_chapter){
+									game_num++;
+									chapter_num=0;
+									if(game_num>max_chapter_num){
+											game_num = 0;
+									}
+							}
+							//Paint_Clear(WHITE);
+							GEN_NEXT_PIC(0, 1, chapter_num);
+					}
+					
+					/*
 					if(load_game_data()==1){
 							uint8_t max_chapter = 3;
 							uint8_t box_num = GEN_NEXT_PIC(operation, 0, 0);
@@ -1858,12 +1866,15 @@ static int updata_flash_image_1in54(uint32_t game_num, bool update)
 					else{
 							GEN_NEXT_PIC(0, 1, 0);
 					}
+					*/
+					
 					/*game rule end*/
 					
 					
-					store_game_data();
+					store_sokuban_data_to_fram(sokuban_data[0]);
+					//store_game_data();
 						
-					update_image_record_in_flash(Map_Image,mode);
+					update_image_record_in_fram(Map_Image,mode);
 				}
 				break;
 			case 3:		//your game
@@ -1877,18 +1888,19 @@ static int updata_flash_image_1in54(uint32_t game_num, bool update)
 					Paint_SelectImage(Map_Image);
 					Paint_Clear(WHITE);
 					
-					/*Your game rule*/
+					/*Your game rule
 					if(load_game_data()==1){
 							//game continues
 					}
 					else{
 							//initialize game data
-					}
-					/*game rule end*/
+					}*/
 					
-					store_game_data();
+					/*game rule end
+					
+					store_game_data();*/
 						
-					update_image_record_in_flash(Map_Image,mode);
+					update_image_record_in_fram(Map_Image,mode);
 				}
 				break;
 			case 4:		//your game
@@ -1902,22 +1914,27 @@ static int updata_flash_image_1in54(uint32_t game_num, bool update)
 					Paint_SelectImage(Map_Image);
 					Paint_Clear(WHITE);
 					
-					/*Your game rule*/
+					/*Your game rule
 					if(load_game_data()==1){
 							//game continues
 					}
 					else{
 							//initialize game data
-					}
-					/*game rule end*/
+					}*/
 					
-					store_game_data();
+					/*game rule end
+					
+					store_game_data();*/
 						
-					update_image_record_in_flash(Map_Image,mode);
+					update_image_record_in_fram(Map_Image,mode);
 				}
 				break;
 		}
+		
+		FRAM_SPI2_unInit();
 		max_pic_num = 4;
+		max_chapter_num = 4;
+		
 		return mode;
 }
 
@@ -1925,7 +1942,7 @@ static int updata_flash_Qrcode_1in54(uint32_t pic_num)
 {
 		int mode;
 		mode = 0;
-		update_image_record_in_flash(QRImage,mode);
+		update_image_record_in_fram(QRImage,mode);
 		return mode;
 		
 }
@@ -1975,17 +1992,13 @@ static void state_handle(void)
 				//nrf_gpio_pin_clear(5);
 				processing = 1;
 				display_mode = updata_flash_image_1in54(m_pic_num, 1);
-		}
-		if(part_display_data_fds_ready == 1){
-				//4
-				part_display_data_fds_ready = 0;
-				record_update(display_mode);
+				
+				FRAM_SPI2_Init();
+				Update_fram_game_num(game_num);
+				Update_fram_chapter_num(chapter_num);
+				FRAM_SPI2_unInit();
 				//5
 				
-		}
-		if(fds_gc_finished == 1){
-				
-				fds_gc_finished = 0;
 				image_display(display_mode);
 				//6
 				adc_threshold_update(display_mode);
@@ -2052,19 +2065,38 @@ int main(void)
 		//FDS_init();
 		
 		FRAM_SPI2_Init();
-		uint8_t game_num = Find_fram_game_num();
-		uint8_t chapter_num = Find_fram_chapter_num();
+		game_num = Find_fram_game_num();
+		chapter_num = Find_fram_chapter_num();
 		FRAM_SPI2_unInit();
 		
-		#if key_LOG
+		if(game_num>4){
+			game_num=0;
+		}
+		
+		#if key_INIT_FRAM
+				FRAM_SPI2_Init();
 				game_num = 0;
 				chapter_num = 0;
 				Update_fram_game_num(game_num);
 				Update_fram_chapter_num(chapter_num);
-				uint8_t game_num_after = Find_fram_game_num();
-				uint8_t chapter_num_after = Find_fram_chapter_num();
-				printf("\ngame_num: %x", game_num_after);
-				printf("\nchapter_num: %x", chapter_num_after);
+				
+				Update_Display_IMG(gImage_white_full);
+				uint8_t init_menu_data[4];
+				uint8_t init_sokuban_data[9][9];
+				store_menu_data_to_fram(init_menu_data);
+				store_sokuban_data_to_fram(init_sokuban_data[0]);
+				
+				nrf_gpio_pin_set(4);
+				#if key_LOG
+						uint8_t game_num_after = Find_fram_game_num();
+						uint8_t chapter_num_after = Find_fram_chapter_num();
+						printf("\ngame_num: %x", game_num_after);
+						printf("\nchapter_num: %x", chapter_num_after);
+				#endif
+				SPI_EP_Init();
+				EPD_HW_Init();
+				EPD_SetRAMValue_BaseMap(gImage_white_full);
+				FRAM_SPI2_unInit();
 		#endif
 		
 		

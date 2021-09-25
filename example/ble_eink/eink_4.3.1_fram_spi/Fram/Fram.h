@@ -46,12 +46,18 @@ void SPI2_Write_bytes(uint16_t Addr, const unsigned char * datas, uint32_t lengt
 
 uint8_t Find_fram_game_num(void);
 void Update_fram_game_num(uint8_t game_num);
+
 uint8_t Find_fram_chapter_num(void);
 void Update_fram_chapter_num(uint8_t chapter_num);
 
 void Find_Display_IMG(uint8_t * datas);
 void Update_Display_IMG(uint8_t * datas);
-void load_menu_data_from_fram(void);
+
+void load_menu_data_from_fram(uint8_t * menu_data);
+void store_menu_data_to_fram(uint8_t * menu_data);
+
+void load_sokuban_data_from_fram(uint8_t * sokuban_data);
+void store_sokuban_data_to_fram(uint8_t * sokuban_data);
 
 
 

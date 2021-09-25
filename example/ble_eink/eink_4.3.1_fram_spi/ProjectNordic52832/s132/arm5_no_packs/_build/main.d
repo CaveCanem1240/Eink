@@ -1,14 +1,14 @@
 .\_build\main.o: ..\..\..\main.c
-.\_build\main.o: F:\keil\ARM\ARMCC\Bin\..\include\stdint.h
-.\_build\main.o: F:\keil\ARM\ARMCC\Bin\..\include\string.h
+.\_build\main.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\_build\main.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\string.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\util\nordic_common.h
 .\_build\main.o: ..\..\..\..\..\..\modules\nrfx\mdk\nrf.h
 .\_build\main.o: ..\..\..\..\..\..\modules\nrfx\mdk\nrf52.h
-.\_build\main.o: F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
-.\_build\main.o: F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h
-.\_build\main.o: F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h
-.\_build\main.o: F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h
-.\_build\main.o: F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h
+.\_build\main.o: C:\keil5_MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h
+.\_build\main.o: C:\keil5_MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h
+.\_build\main.o: C:\keil5_MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h
+.\_build\main.o: C:\keil5_MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h
+.\_build\main.o: C:\keil5_MDK\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmSimd.h
 .\_build\main.o: ..\..\..\..\..\..\modules\nrfx\mdk\system_nrf52.h
 .\_build\main.o: ..\..\..\..\..\..\modules\nrfx\mdk\system_nrf.h
 .\_build\main.o: ..\..\..\..\..\..\modules\nrfx\mdk\nrf52_bitfields.h
@@ -17,7 +17,7 @@
 .\_build\main.o: ..\..\..\..\..\..\modules\nrfx\mdk\compiler_abstraction.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\s132\headers\ble_hci.h
 .\_build\main.o: ..\..\..\..\..\..\components\ble\common\ble_advdata.h
-.\_build\main.o: F:\keil\ARM\ARMCC\Bin\..\include\stdbool.h
+.\_build\main.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\s132\headers\ble.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\s132\headers\nrf_svc.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\s132\headers\nrf_error.h
@@ -34,7 +34,7 @@
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\util\sdk_os.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\util\sdk_errors.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\util\app_util.h
-.\_build\main.o: F:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+.\_build\main.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\stddef.h
 .\_build\main.o: ..\..\..\..\..\..\components\softdevice\s132\headers\nrf52\nrf_mbr.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\util\sdk_macros.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\util\nrf_assert.h
@@ -52,7 +52,7 @@
 .\_build\main.o: ..\..\..\..\..\..\components\ble\nrf_ble_qwr\nrf_ble_qwr.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\timer\app_timer.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\util\app_error.h
-.\_build\main.o: F:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\_build\main.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\stdio.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\util\app_error_weak.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\log\nrf_log_instance.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\log\nrf_log_types.h
@@ -95,7 +95,7 @@
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\log\src\nrf_log_ctrl_internal.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\log\nrf_log_backend_interface.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\memobj\nrf_memobj.h
-.\_build\main.o: F:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+.\_build\main.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\stdlib.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\balloc\nrf_balloc.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\log\nrf_log_default_backends.h
 .\_build\main.o: ..\..\..\..\..\..\components\libraries\delay\nrf_delay.h
@@ -116,6 +116,6 @@
 .\_build\main.o: ..\..\..\..\..\..\modules\nrfx\hal/nrf_power.h
 .\_build\main.o: ..\..\..\..\..\..\modules\nrfx\drivers\include\nrfx_power_clock.h
 .\_build\main.o: ..\..\..\Sokoban\Sokoban.h
-.\_build\main.o: F:\keil\ARM\ARMCC\Bin\..\include\math.h
+.\_build\main.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\math.h
 .\_build\main.o: ..\..\..\Menu\menu.h
 .\_build\main.o: ..\..\..\Fram\Fram.h

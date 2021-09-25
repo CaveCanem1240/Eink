@@ -1,9 +1,9 @@
 .\_build\menu.o: ..\..\..\Menu\menu.c
-.\_build\menu.o: F:\keil\ARM\ARMCC\Bin\..\include\stdint.h
-.\_build\menu.o: F:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
-.\_build\menu.o: F:\keil\ARM\ARMCC\Bin\..\include\string.h
-.\_build\menu.o: F:\keil\ARM\ARMCC\Bin\..\include\stdbool.h
-.\_build\menu.o: F:\keil\ARM\ARMCC\Bin\..\include\math.h
+.\_build\menu.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\_build\menu.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\stdlib.h
+.\_build\menu.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\string.h
+.\_build\menu.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\stdbool.h
+.\_build\menu.o: C:\keil5_MDK\ARM\ARMCC\Bin\..\include\math.h
 .\_build\menu.o: ..\..\..\GUI\GUI_Paint.h
 .\_build\menu.o: ..\..\..\GUI\../Fonts/fonts.h
 .\_build\menu.o: ..\..\..\Menu\Menu.h
