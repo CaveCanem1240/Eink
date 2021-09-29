@@ -8,7 +8,7 @@
 //#define   FRAM_RESET    22
 //#define   FRAM_BUSY     27
 
-#define   FRAM_MOSI     2
+#define   FRAM_MOSI     2			//29
 #define   FRAM_MISO     28
 #define   FRAM_CLK      31
 

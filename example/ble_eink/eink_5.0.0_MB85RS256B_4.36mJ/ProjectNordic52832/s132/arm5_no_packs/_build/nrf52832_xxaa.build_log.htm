@@ -21,12 +21,15 @@ Target DLL:      Segger\JL2CM3.dll V2.99.23.0
 Dialog DLL:      TCM.DLL V1.27.0.0
  
 <h2>Project:</h2>
-C:\Users\Cave Canem\Desktop\repo\Eink\example\ble_eink\eink_4.3.1_fram_spi\ProjectNordic52832\s132\arm5_no_packs\ble_app_uart_pca10040_s132.uvprojx
+C:\Users\Cave Canem\Desktop\Eink\ViPSN-Eink_SDK_16.0.0\examples\ble_eink\eink_5.0.0_MB85RS256B_4.36mJ\ProjectNordic52832\s132\arm5_no_packs\ble_app_uart_pca10040_s132.uvprojx
 Project File Date:  09/25/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'F:\keil\ARM\ARMCC\Bin'
 Build target 'nrf52832_xxaa'
+compiling boards.c...
+compiling bsp_btn_ble.c...
+compiling bsp.c...
 compiling main.c...
 ..\..\..\main.c(611): warning:  #177-D: variable "err_code"  was declared but never referenced
   		ret_code_t err_code;
@@ -72,11 +75,11 @@ compiling main.c...
   static bool load_game_data(void)
 ..\..\..\main.c(1658): warning:  #177-D: function "store_game_data"  was declared but never referenced
   static void store_game_data(void)
-..\..\..\main.c(1941): warning:  #177-D: function "updata_flash_Qrcode_1in54"  was declared but never referenced
+..\..\..\main.c(1945): warning:  #177-D: function "updata_flash_Qrcode_1in54"  was declared but never referenced
   static int updata_flash_Qrcode_1in54(uint32_t pic_num)
 ..\..\..\main.c: 23 warnings, 0 errors
 linking...
-Program Size: Code=34336 RO-data=12584 RW-data=720 ZI-data=42216  
+Program Size: Code=34392 RO-data=12592 RW-data=720 ZI-data=42216  
 FromELF: creating hex file...
 ".\_build\nrf52832_xxaa.axf" - 0 Error(s), 23 Warning(s).
 
@@ -109,7 +112,7 @@ Package Vendor: NordicSemiconductor
       Include file:  Device\Include\system_nrf52.h
       Include file:  Device\Include\system_nrf.h
       Source file:   Device\Source\system_nrf52.c
-Build Time Elapsed:  00:00:04
+Build Time Elapsed:  00:00:07
 </pre>
 </body>
 </html>

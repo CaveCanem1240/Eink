@@ -458,13 +458,13 @@ static void adc_threshold_update(int display_mode)
 {
 		switch(display_mode){
 			case 0:
-				adc_threshold = 400;//250;//385;//1600; 370
+				adc_threshold = 240;//385;//1600; 370
 				break;
 			case 1:
-				adc_threshold = 400;//250;//385;//1600; 370
+				adc_threshold = 240;//385;//1600; 370
 				break;
 			case 2:
-				adc_threshold = 400;//285;//385;//1600; 370
+				adc_threshold = 285;//385;//1600; 370
 				break;
 		}
 }
@@ -1812,6 +1812,10 @@ static int updata_flash_image_1in54(uint32_t game_num, bool update)
 					if(nrf_gpio_pin_read(16)==1){
 							operation=4;
 					}
+					nrf_gpio_cfg_default(13);
+					nrf_gpio_cfg_default(14);
+					nrf_gpio_cfg_default(15);
+					nrf_gpio_cfg_default(16);
 					
 					load_sokuban_data_from_fram(sokuban_data[0]);
 					
@@ -2067,10 +2071,12 @@ int main(void)
 		
 		//FDS_init();
 		
+		nrf_gpio_pin_set(4);
 		FRAM_SPI2_Init();
 		game_num = Find_fram_game_num();
 		chapter_num = Find_fram_chapter_num();
 		FRAM_SPI2_unInit();
+		nrf_gpio_pin_clear(4);
 		
 		if(game_num>4){
 			game_num=0;

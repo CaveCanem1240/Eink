@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\_build\nrf52832_xxaa.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\_build\nrf52832_xxaa.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Sat Sep 25 15:16:56 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Wed Sep 29 17:52:21 2021
 <BR><P>
 <H3>Maximum Stack Usage =       1004 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -163,8 +163,8 @@ Global Symbols
 <P><STRONG><a name="[63]"></a>__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_wspace_close</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, nrf_atfifo.o(.emb_text))
 <BR><BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_wspace_close
 </UL>
-<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_wspace_close
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_atfifo_item_put
+<BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_atfifo_item_put
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_wspace_close
 </UL>
 
 <P><STRONG><a name="[161]"></a>__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_rspace_req</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, nrf_atfifo.o(.emb_text))
@@ -174,8 +174,8 @@ Global Symbols
 <P><STRONG><a name="[64]"></a>__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_rspace_close</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, nrf_atfifo.o(.emb_text))
 <BR><BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_rspace_close
 </UL>
-<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_rspace_close
-<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_atfifo_item_free
+<BR>[Called By]<UL><LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_atfifo_item_free
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_rspace_close
 </UL>
 
 <P><STRONG><a name="[1d3]"></a>__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_space_clear</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, nrf_atfifo.o(.emb_text), UNUSED)
@@ -436,9 +436,9 @@ Global Symbols
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_write
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_connect
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;characteristic_add
-<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_process
 <LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_backend_serial_put
 <LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;event_send
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_process
 </UL>
 
 <P><STRONG><a name="[1de]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
@@ -1075,9 +1075,9 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_start
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_handle
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EPD_Init
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;conn_params_negotiation
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_led_indication
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_button_event_handler
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;conn_params_negotiation
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_start
 </UL>
 
@@ -1088,9 +1088,9 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;epd_rst_busy_timer_timeout_handler
 <LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;busy_timer_timeout_handler
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_handler
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_led_indication
 <LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bsp_button_event_handler
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_handler
 </UL>
 
 <P><STRONG><a name="[114]"></a>app_util_critical_region_enter</STRONG> (Thumb, 64 bytes, Stack size 12 bytes, app_util_platform.o(i.app_util_critical_region_enter))
@@ -1098,29 +1098,29 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_enable_request
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_pwr_mgmt_run
-<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_release
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sd_state_evt_handler
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_acquire
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_release
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;evt_handle
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_free
 <LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_alloc
-<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buf_prealloc
 <LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_disable_request
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buf_prealloc
 </UL>
 
 <P><STRONG><a name="[117]"></a>app_util_critical_region_exit</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, app_util_platform.o(i.app_util_critical_region_exit))
 <BR><BR>[Called By]<UL><LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_enable_request
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_pwr_mgmt_run
-<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_release
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sd_state_evt_handler
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_acquire
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_release
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;evt_handle
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_free
 <LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_alloc
-<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buf_prealloc
 <LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_disable_request
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buf_prealloc
 </UL>
 
 <P><STRONG><a name="[da]"></a>blcm_link_ctx_get</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, ble_link_ctx_manager.o(i.blcm_link_ctx_get))
@@ -1247,9 +1247,9 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> main.o(sdh_ble_observers2)
 </UL>
 <P><STRONG><a name="[f4]"></a>ble_srv_is_notification_enabled</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, ble_srv_common.o(i.ble_srv_is_notification_enabled))
-<BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_handler
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_write
+<BR><BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_write
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;on_connect
+<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_evt_handler
 </UL>
 
 <P><STRONG><a name="[1cb]"></a>bsp_board_button_idx_to_pin</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, boards.o(i.bsp_board_button_idx_to_pin))
@@ -1527,7 +1527,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updata_flash_image_1in54
 </UL>
 
-<P><STRONG><a name="[31]"></a>main</STRONG> (Thumb, 418 bytes, Stack size 176 bytes, main.o(i.main))
+<P><STRONG><a name="[31]"></a>main</STRONG> (Thumb, 438 bytes, Stack size 176 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1004<LI>Call Chain = main &rArr; state_handle &rArr; updata_flash_image_1in54 &rArr; GEN_NEXT_PIC &rArr; GEN_MAP_PIC &rArr; Paint_DrawNum &rArr; Paint_DrawString_EN &rArr; Paint_DrawChar &rArr; Paint_SetPixel
 </UL>
 <BR>[Calls]<UL><LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_enable_request
@@ -1645,8 +1645,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_rspace_close
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_req_process
-<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_process
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_free
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_process
 </UL>
 
 <P><STRONG><a name="[160]"></a>nrf_atfifo_item_get</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, nrf_atfifo.o(i.nrf_atfifo_item_get))
@@ -1655,8 +1655,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___12_nrf_atfifo_c_51f461e1__nrf_atfifo_rspace_req
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_req_process
-<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_process
 <LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_process
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_process
 </UL>
 
 <P><STRONG><a name="[162]"></a>nrf_atfifo_item_put</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, nrf_atfifo.o(i.nrf_atfifo_item_put))
@@ -1754,8 +1754,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___12_nrf_atomic_c_85ca2469__nrf_atomic_internal_sub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_process
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_memobj_put
+<BR>[Called By]<UL><LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_memobj_put
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_process
 </UL>
 
 <P><STRONG><a name="[16b]"></a>nrf_balloc_alloc</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, nrf_balloc.o(i.nrf_balloc_alloc))
@@ -1841,10 +1841,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_fprintf_fmt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prefix_process
-<LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;postfix_process
-<LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_std_entry_process
+<BR>[Called By]<UL><LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_std_entry_process
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_hexdump_entry_process
+<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prefix_process
+<LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;postfix_process
 </UL>
 
 <P><STRONG><a name="[119]"></a>nrf_fprintf_buffer_flush</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, nrf_fprintf.o(i.nrf_fprintf_buffer_flush))
@@ -1955,9 +1955,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std_n
 </UL>
 <BR>[Called By]<UL><LI><a href="#[153]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_sdh_ble_enable
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_rtc_init
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_fault_handler
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;drv_rtc_init
 </UL>
 
 <P><STRONG><a name="[120]"></a>nrf_log_frontend_std_1</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, nrf_log_frontend.o(i.nrf_log_frontend_std_1))
@@ -2235,8 +2235,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[174]"></a>nrfx_clock_enable</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, nrfx_clock.o(i.nrfx_clock_enable))
-<BR><BR>[Called By]<UL><LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_init
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sd_state_evt_handler
+<BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sd_state_evt_handler
+<LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_init
 </UL>
 
 <P><STRONG><a name="[172]"></a>nrfx_clock_init</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, nrfx_clock.o(i.nrfx_clock_init))
@@ -2290,9 +2290,9 @@ Global Symbols
 <P><STRONG><a name="[1a4]"></a>nrfx_prs_acquire</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, nrfx_prs.o(i.nrfx_prs_acquire))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = nrfx_prs_acquire &rArr; app_util_critical_region_enter
 </UL>
-<BR>[Calls]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_exit
+<BR>[Calls]<UL><LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prs_box_get
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_exit
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_critical_region_enter
-<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prs_box_get
 </UL>
 <BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_init
 </UL>
@@ -2448,7 +2448,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.ADC_Init)
 </UL>
-<P><STRONG><a name="[158]"></a>adc_threshold_update</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, main.o(i.adc_threshold_update))
+<P><STRONG><a name="[158]"></a>adc_threshold_update</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, main.o(i.adc_threshold_update))
 <BR><BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;state_handle
 </UL>
@@ -2603,7 +2603,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[157]"></a>updata_flash_image_1in54</STRONG> (Thumb, 572 bytes, Stack size 32 bytes, main.o(i.updata_flash_image_1in54))
+<P><STRONG><a name="[157]"></a>updata_flash_image_1in54</STRONG> (Thumb, 598 bytes, Stack size 32 bytes, main.o(i.updata_flash_image_1in54))
 <BR><BR>[Stack]<UL><LI>Max Depth = 812<LI>Call Chain = updata_flash_image_1in54 &rArr; GEN_NEXT_PIC &rArr; GEN_MAP_PIC &rArr; Paint_DrawNum &rArr; Paint_DrawString_EN &rArr; Paint_DrawChar &rArr; Paint_SetPixel
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;store_sokuban_data_to_fram
@@ -2855,11 +2855,11 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = ble_evt_handler &rArr; conn_params_negotiation &rArr; app_timer_start &rArr; timer_req_schedule &rArr; nrf_atfifo_item_alloc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_timer_stop
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_srv_is_notification_enabled
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_error_evt
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_conn_params_ok
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;instance_get
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;conn_params_negotiation
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_srv_is_notification_enabled
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ble_conn_params.o(sdh_ble_observers1)
 </UL>
@@ -3496,9 +3496,9 @@ Local Symbols
 <P><STRONG><a name="[145]"></a>init_execute</STRONG> (Thumb, 188 bytes, Stack size 24 bytes, fds.o(i.init_execute))
 <BR><BR>[Stack]<UL><LI>Max Depth = 300<LI>Call Chain = init_execute &rArr; page_tag_write_swap &rArr; nrf_fstorage_write &rArr; nrf_log_frontend_std_3 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;page_tag_write_swap
+<BR>[Calls]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_fstorage_erase
+<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;page_tag_write_swap
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;page_tag_write_data
-<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_fstorage_erase
 </UL>
 <BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_process
 </UL>
@@ -3534,13 +3534,13 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_atfifo_item_get
 <LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_atfifo_item_free
+<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_atomic_u32_sub
 <LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write_execute
 <LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_execute
 <LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gc_execute
 <LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;event_send
 <LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;event_prepare
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delete_execute
-<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_atomic_u32_sub
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fs_event_handler
@@ -3587,10 +3587,10 @@ Local Symbols
 <P><STRONG><a name="[1ae]"></a>write_execute</STRONG> (Thumb, 232 bytes, Stack size 32 bytes, fds.o(i.write_execute))
 <BR><BR>[Stack]<UL><LI>Max Depth = 316<LI>Call Chain = write_execute &rArr; record_header_flag_dirty &rArr; nrf_fstorage_write &rArr; nrf_log_frontend_std_3 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;record_header_flag_dirty
+<BR>[Calls]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_fstorage_write
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;record_header_flag_dirty
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;record_find_by_desc
 <LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;page_offsets_update
-<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_fstorage_write
 </UL>
 <BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;queue_process
 </UL>
