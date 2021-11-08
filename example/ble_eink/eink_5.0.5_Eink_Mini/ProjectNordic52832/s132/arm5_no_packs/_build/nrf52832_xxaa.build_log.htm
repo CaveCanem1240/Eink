@@ -1,0 +1,105 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.23.0.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information:  ,  , LIC=FYKNN-YHUQX-2LVCT-RMI3S-XSR4S-ZJYYJ
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.23
+Toolchain Path:  F:\keil\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 4 (build 422)
+Assembler:       Armasm.exe V5.06 update 4 (build 422)
+Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
+Library Manager: ArmAr.exe V5.06 update 4 (build 422)
+Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
+CPU DLL:         
+Dialog DLL:      
+Target DLL:      Segger\JL2CM3.dll V2.99.23.0
+Dialog DLL:      TCM.DLL V1.27.0.0
+ 
+<h2>Project:</h2>
+C:\Users\Cave Canem\Desktop\Eink\ViPSN-Eink_SDK_16.0.0\examples\ble_eink\eink_5.0.5_Eink_Mini\ProjectNordic52832\s132\arm5_no_packs\ble_app_uart_pca10040_s132.uvprojx
+Project File Date:  09/30/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'F:\keil\ARM\ARMCC\Bin'
+Build target 'nrf52832_xxaa'
+compiling main.c...
+..\..\..\main.c(368): warning:  #188-D: enumerated type mixed with another type
+  		config.hal.reference = lp_threshold;
+..\..\..\main.c(1695): warning:  #177-D: variable "erase_bonds"  was declared but never referenced
+      bool erase_bonds;
+..\..\..\main.c(271): warning:  #550-D: variable "ble_adc_reach_threshold"  was set but never used
+  static bool ble_adc_reach_threshold = 0;
+..\..\..\main.c(288): warning:  #550-D: variable "ble_data"  was set but never used
+  static char ble_data[256];
+..\..\..\main.c(291): warning:  #177-D: variable "next_chapter_flag"  was declared but never referenced
+  static bool next_chapter_flag = 0;
+..\..\..\main.c(296): warning:  #177-D: variable "QRImage_data"  was declared but never referenced
+  static char QRImage_data[screen_size];
+..\..\..\main.c(299): warning:  #177-D: variable "menu_data"  was declared but never referenced
+  static uint8_t menu_data[4];
+..\..\..\main.c(300): warning:  #177-D: variable "sokuban_data"  was declared but never referenced
+  static uint8_t sokuban_data[9][9];
+..\..\..\main.c(303): warning:  #550-D: variable "max_pic_num"  was set but never used
+  static uint8_t max_pic_num;
+..\..\..\main.c(314): warning:  #550-D: variable "check_busy_N"  was set but never used
+  static bool check_busy_N = 0;
+..\..\..\main.c(316): warning:  #550-D: variable "eink_update_process"  was set but never used
+  static uint8_t eink_update_process = 0;
+..\..\..\main.c(708): warning:  #177-D: function "Paint_Gen_Qrcode"  was declared but never referenced
+  static void Paint_Gen_Qrcode(DOT_PIXEL qr_pixel_size)
+..\..\..\main.c(785): warning:  #177-D: function "buttons_init"  was declared but never referenced
+  static void buttons_init(void)
+..\..\..\main.c(1315): warning:  #177-D: function "uart_init"  was declared but never referenced
+  static void uart_init(void)
+..\..\..\main.c(1376): warning:  #177-D: function "buttons_leds_init"  was declared but never referenced
+  static void buttons_leds_init(bool * p_erase_bonds)
+..\..\..\main.c(1395): warning:  #177-D: function "log_init"  was declared but never referenced
+  static void log_init(void)
+..\..\..\main.c(1415): warning:  #177-D: function "advertising_start"  was declared but never referenced
+  static void advertising_start(void)
+..\..\..\main.c(1606): warning:  #177-D: function "updata_flash_Qrcode_1in54"  was declared but never referenced
+  static int updata_flash_Qrcode_1in54(uint32_t pic_num)
+..\..\..\main.c: 18 warnings, 0 errors
+linking...
+Program Size: Code=31724 RO-data=12556 RW-data=688 ZI-data=42008  
+FromELF: creating hex file...
+".\_build\nrf52832_xxaa.axf" - 0 Error(s), 18 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM::CMSIS:CORE:4.3.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 4.3.0
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack_NordicLicense.8.27.0.pack
+                NordicSemiconductor::Device:Startup:8.27.0
+                Nordic Semiconductor nRF ARM devices Device Family Pack with Nordic license.
+   * Component: Startup Version: 8.27.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_nrf52832_xxaa
+  F:\keil\ARM\CMSIS\4.5.0\CMSIS\Include
+  F:\keil\NordicSemiconductor\nRF_DeviceFamilyPack\8.34.1\Device\Include
+  F:\keil\NordicSemiconductor\nRF_DeviceFamilyPack_NordicLicense\8.27.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:4.3.0
+
+   * Component: NordicSemiconductor::Device:Startup:8.27.0
+      Include file:  Device\Include\system_nrf.h
+      Source file:   Device\Source\arm\arm_startup_nrf52.s
+      Source file:   Device\Source\system_nrf52.c
+      Include file:  Device\Include\system_nrf52.h
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>
